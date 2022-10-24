@@ -34,16 +34,14 @@ function App() {
   }
 
   const deleteAccount = (id) => {
-      const accountsCopy = [...accounts];
-      const newCopyAccounts = accountsCopy.filter(acc => acc.id !== id)
+      const newCopyAccounts = accounts.filter(acc => acc.id !== id)
       setAccounts(newCopyAccounts)
   }
 
   const editAccount = (acc) => {
-      const copyAccounts = [...accounts]
-      let accountPossition= copyAccounts.map(account => account.id).indexOf(acc.id)
-      copyAccounts[accountPossition] = acc;
-      setAccounts(copyAccounts)
+      let accountPossition= accounts.map(account => account.id).indexOf(acc.id)
+      accounts[accountPossition] = acc;
+      setAccounts(accounts)
   }
 
   return (
